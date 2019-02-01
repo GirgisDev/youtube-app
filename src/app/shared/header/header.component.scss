@@ -1,0 +1,44 @@
+@import './../../../assets/css/variables.scss';
+
+.header {
+  background-color: $brand;
+  min-height: 40px;
+  padding: 10px;
+
+  &__logo {
+    width: 7.3%;
+    float: left;
+    position: relative;
+    bottom: 5px;
+    margin-right: 2.7%;
+  }
+
+  &__search {
+    float: right;
+    width: 90%;
+
+    &__input {
+      float: left;
+      width: 95%;
+      border: none;
+      height: 20px;
+      padding: 0 5px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__btn {
+      width: 5%;
+      height: 21px;
+      background-color: inherit;
+      border: none;
+      float: left;
+
+      &__icon {
+        width: 10px;
+      }
+    }
+  }
+}
