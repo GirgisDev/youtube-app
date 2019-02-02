@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-home></app-home>
+<app-header (keywordValue)="searchKeyword = $event"></app-header>
+<app-home [searchKeyword]="searchKeyword"></app-home>

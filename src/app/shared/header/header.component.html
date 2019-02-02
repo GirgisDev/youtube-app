@@ -2,15 +2,33 @@
   <div class="_wrapper">
     <img src="assets/images/logo.svg" alt="youtube logo" class="header__logo">
     <div class="header__search">
-      <input 
-        type="text" 
-        placeholder="Search Youtube"
-        class="header__search__input">
-      <button class="header__search__btn">
+      <div 
+        *ngIf="searchActive"
+        class="header__search--active">
+        <input 
+          type="text" 
+          placeholder="Search Youtube"
+          (keyup.enter)="search()"
+          [(ngModel)]="keyword"
+          class="header__search__input">
+        <button 
+          (click)="search()"
+          class="header__search__btn">
+          <img 
+            src="assets/images/search-icon.svg" 
+            alt="" class="header__search__btn__icon">
+        </button>
+      </div>
+      <div 
+        *ngIf="!searchActive"
+        class="header__search--not-active">
+        <span class="header__search__current">{{ keyword }}</span>
         <img 
+          (click)="searchActive = true"
+          *ngIf="!searchActive"
           src="assets/images/search-icon.svg" 
-          alt="" class="header__search__btn__icon">
-      </button>
+          alt="" class="header__search-icon">
+      </div>
     </div>
   </div>
 </header>
