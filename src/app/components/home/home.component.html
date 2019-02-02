@@ -1,17 +1,18 @@
-{{searchKeyword}}
-<div class="results">
-  <div class="results__item" *ngFor="let item of results">
-    <img 
-      class="results__item__img"
-      [src]="item.snippet.thumbnails.default.url" 
-      [width]="item.snippet.thumbnails.default.width"
-      [height]="item.snippet.thumbnails.default.height"
-      alt="">
-    <a class="results__item__info">
-      <h3>{{ item.snippet.title }}</h3>
-      <h5>{{ item.snippet.channelTitle }}</h5>
-    </a>
-    <div class="clearfix"></div>
+<div class="_wrapper">
+  <div class="results">
+    <div class="results__item" *ngFor="let item of results">
+      <img 
+        class="results__item__img"
+        [src]="item.snippet.thumbnails.default.url" 
+        [width]="item.snippet.thumbnails.default.width"
+        [height]="item.snippet.thumbnails.default.height"
+        alt="">
+      <a class="results__item__info">
+        <h3>{{ item.snippet.title }}</h3>
+        <h5>{{ item.snippet.channelTitle }}</h5>
+      </a>
+      <div class="clearfix"></div>
+    </div>
   </div>
+  <app-loading [loading]="loading"></app-loading>
 </div>
-<app-loading [loading]="loading"></app-loading>
