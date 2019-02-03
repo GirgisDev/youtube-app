@@ -1,7 +1,33 @@
-.results__item__img {
-  float: left;
-  margin-right: 10px;
-}
-.results__item__info {
-  float: left;
+.results {
+  padding: 10px;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  border-bottom: none;
+
+  &__item {
+    display: block;
+    margin: 20px 0;
+
+    &__img {
+      float: left;
+      margin-right: 10px;
+    }
+
+    &__info {
+      padding-top: 5px;
+  
+      &__title {
+        margin: 0 0 10px;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+      
+      &__description {
+        font-weight: normal;
+        font-size: 0.9rem;
+        color: #757575;
+        margin: 0;
+      }
+    }
+  }
 }

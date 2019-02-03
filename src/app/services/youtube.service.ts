@@ -12,7 +12,7 @@ export class YoutubeService {
     private http: HttpClient
   ) { }
 
-  search(keyword): Observable<any> {
-    return this.http.get(this.authRequest('search') + '&q=' + keyword);
+  search(data): Observable<any> {
+    return this.http.get(this.authRequest('search') + '&q=' + data.keyword + '&maxResults=' + data.max);
   }
 }

@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit, OnChanges {
   loading = false;
   results: any[];
   err: string;
+  pageNum = 1;
   constructor(private youtubeService: YoutubeService) { }
 
   ngOnInit() {
@@ -24,13 +25,29 @@ export class HomeComponent implements OnInit, OnChanges {
 
   search() {
     this.loading = true;
-    this.youtubeService.search(this.searchKeyword).subscribe(res => {
-      this.results = res.items;
+    let params = {
+      keyword: this.searchKeyword,
+      max: this.pageNum * 5
+    }
+    this.youtubeService.search(params).subscribe(res => {
+      this.setResults(res.items);
       this.loading = false;
     }, err => {
       this.err = err;
       this.loading = false;
     })
+  }
+
+  setResults(arr) {
+    this.results = [
+      ...this.results || [],
+      ...arr.slice(Math.max(arr.length - 5, 0))
+    ];
+  }
+
+  loadMore() {
+    this.pageNum += 1;
+    this.search();
   }
 
 }

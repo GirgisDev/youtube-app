@@ -1,6 +1,8 @@
 .loading-row {
   text-align: center;
-}
-.loading-row__img {
-  width: 40px;
+  background-color: #FFF;
+
+  &__img {
+    width: 40px;
+  }
 }

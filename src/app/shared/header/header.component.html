@@ -7,6 +7,7 @@
         class="header__search--active">
         <input 
           type="text" 
+          #searchInput
           placeholder="Search Youtube"
           (keyup.enter)="search()"
           [(ngModel)]="keyword"

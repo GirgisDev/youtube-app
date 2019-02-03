@@ -9,6 +9,8 @@
 body, html {
   margin: 0;
   padding: 0;
+  background-color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
 }
 
 ul {
@@ -25,4 +27,25 @@ ul {
   display: block;
   margin: auto;
   width: 95%;
+}
+
+._no-content {
+  width: 80%;
+  text-align: center;
+  margin: 40px auto;
+  font-size: 1.3rem;
+}
+
+.load-more-btn {
+  width: 100%;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  padding: 10px 0;
+  color: #757575;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  &:focus {
+    outline: none;
+  }
 }
