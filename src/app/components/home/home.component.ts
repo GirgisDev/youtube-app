@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { YoutubeService } from 'src/app/services/youtube.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit, OnChanges {
   @Input('searchKeyword') searchKeyword: string;
@@ -19,7 +20,10 @@ export class HomeComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     if (changes.searchKeyword) {
-      if (changes.searchKeyword.currentValue) this.search()
+      if (changes.searchKeyword.currentValue) {
+        this.resetSearch();
+        this.search()
+      }
     }
   }
 
@@ -36,6 +40,11 @@ export class HomeComponent implements OnInit, OnChanges {
       this.err = err;
       this.loading = false;
     })
+  }
+
+  resetSearch() {
+    this.results = [];
+    this.pageNum = 1;
   }
 
   setResults(arr) {

@@ -11,13 +11,18 @@
     &__img {
       float: left;
       margin-right: 10px;
+      min-width: 80px;
+
+      &--channel {
+        border-radius: 50%;
+      }
     }
 
     &__info {
       padding-top: 5px;
   
       &__title {
-        margin: 0 0 10px;
+        margin: 0 0 4px;
         font-size: 1rem;
         font-weight: normal;
       }

@@ -11,13 +11,19 @@ import { HomeComponent } from './components/home/home.component';
 // service
 import { YoutubeService } from './services/youtube.service';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { VideoResultComponent } from './shared/video-result/video-result.component';
+import { ChannelResultComponent } from './shared/channel-result/channel-result.component';
+import { ListResultComponent } from './shared/list-result/list-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    LoadingComponent
+    LoadingComponent,
+    VideoResultComponent,
+    ChannelResultComponent,
+    ListResultComponent
   ],
   imports: [
     BrowserModule,
