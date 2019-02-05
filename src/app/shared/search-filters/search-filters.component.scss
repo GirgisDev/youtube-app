@@ -1,0 +1,19 @@
+.search-filters {
+  background-color: #FFF;
+  padding: 10px;
+  border: 1px solid #DEDEDE;
+  border-bottom: none;
+}
+
+.select-filter {
+  height: 30px;
+  border: 1px solid #CCC;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  padding: 0 4px;
+  margin-right: 10px;
+
+  &:focus {
+    outline: none;
+  }
+}

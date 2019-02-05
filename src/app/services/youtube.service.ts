@@ -13,6 +13,16 @@ export class YoutubeService {
   ) { }
 
   search(data): Observable<any> {
-    return this.http.get(this.authRequest('search') + '&q=' + data.keyword + '&maxResults=' + data.max);
+    let searchRequest = this.authRequest('search').trim();
+    let filters = this.checkForFilters(data);
+    searchRequest =  `${searchRequest}&q=${data.keyword}&maxResults=${data.max}${filters}`;
+    return this.http.get(searchRequest);
+  }
+
+  checkForFilters(data) {
+    let filters = '';
+    if (data.type) filters += '&type=' + data.type;
+    if (data.publishedAfter) filters += '&publishedAfter=' + (new Date(data.publishedAfter)).toISOString();
+    return filters;
   }
 }

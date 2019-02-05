@@ -33,3 +33,7 @@
     </div>
   </div>
 </header>
+<search-filters 
+  *ngIf="showFilters"
+  (emitType)="getSearchType($event)" 
+  (emitUploadTime)="getUploadTime($event)"></search-filters>

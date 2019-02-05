@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   api: {
-    url: "https://www.googleapis.com/youtube/v3/",
-    key: "key=AIzaSyC-L2CjIjkEp7cIifLBNZLQgd08hgIHarY",
-    part: "part=snippet"
+    url: `https://www.googleapis.com/youtube/v3/`,
+    key: `key=AIzaSyC-L2CjIjkEp7cIifLBNZLQgd08hgIHarY`,
+    part: `part=snippet`
   },
   authRequest: (service) => {
     return `

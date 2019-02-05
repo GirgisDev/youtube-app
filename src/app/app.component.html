@@ -1,2 +1,8 @@
-<app-header (keywordValue)="searchKeyword = $event"></app-header>
-<app-home [searchKeyword]="searchKeyword"></app-home>
+<app-header 
+  (keywordValue)="searchKeyword = $event"
+  (emitType)="searchType = $event"
+  (emitUploadTime)="uploadTime = $event"></app-header>
+<app-home 
+  [searchKeyword]="searchKeyword"
+  [searchType]="searchType"
+  [uploadTime]="uploadTime"></app-home>

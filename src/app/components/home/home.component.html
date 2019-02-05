@@ -1,4 +1,4 @@
-<div class="_wrapper" *ngIf="results">
+<div class="_wrapper" *ngIf="results && (results ? results.length : false)">
   <div class="results">
     <div *ngFor="let item of results">
       <video-result 

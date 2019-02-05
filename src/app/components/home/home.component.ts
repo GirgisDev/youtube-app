@@ -9,6 +9,8 @@ import { YoutubeService } from 'src/app/services/youtube.service';
 })
 export class HomeComponent implements OnInit, OnChanges {
   @Input('searchKeyword') searchKeyword: string;
+  @Input('searchType') searchType: string;
+  @Input('uploadTime') uploadTime: Date;
   loading = false;
   results: any[];
   err: string;
@@ -19,10 +21,11 @@ export class HomeComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes) {
-    if (changes.searchKeyword) {
-      if (changes.searchKeyword.currentValue) {
+    let change = changes.searchKeyword || changes.searchType || changes.uploadTime;
+    if (change) {
+      if (change.currentValue) {
         this.resetSearch();
-        this.search()
+        this.search();
       }
     }
   }
@@ -31,7 +34,9 @@ export class HomeComponent implements OnInit, OnChanges {
     this.loading = true;
     let params = {
       keyword: this.searchKeyword,
-      max: this.pageNum * 5
+      max: this.pageNum * 5,
+      type: this.searchType,
+      publishedAfter: this.uploadTime
     }
     this.youtubeService.search(params).subscribe(res => {
       this.setResults(res.items);

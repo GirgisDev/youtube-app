@@ -1,0 +1,24 @@
+<div class="_wrapper">
+  <div class="search-filters">
+    <select 
+      class="select-filter"
+      (change)="setType()"
+      [(ngModel)]="currentType"
+      name="type">
+      <option 
+        *ngFor="let type of searchTypes"
+        [selected]="type.value === 'all'"
+        [value]="type.value">{{ type.name }}</option>
+    </select>
+    <select 
+      class="select-filter"
+      (change)="setUploadTime()"
+      [(ngModel)]="currentUploadDate"
+      name="type">
+      <option 
+        *ngFor="let date of uploadDates"
+        [selected]="date.value === 'any'"
+        [value]="date.value">{{ date.name }}</option>
+    </select>
+  </div>
+</div>

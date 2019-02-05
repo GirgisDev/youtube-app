@@ -14,6 +14,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import { VideoResultComponent } from './shared/video-result/video-result.component';
 import { ChannelResultComponent } from './shared/channel-result/channel-result.component';
 import { ListResultComponent } from './shared/list-result/list-result.component';
+import { SearchFiltersComponent } from './shared/search-filters/search-filters.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ListResultComponent } from './shared/list-result/list-result.component'
     LoadingComponent,
     VideoResultComponent,
     ChannelResultComponent,
-    ListResultComponent
+    ListResultComponent,
+    SearchFiltersComponent
   ],
   imports: [
     BrowserModule,
