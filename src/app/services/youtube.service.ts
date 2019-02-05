@@ -13,10 +13,10 @@ export class YoutubeService {
   ) { }
 
   search(data): Observable<any> {
-    let searchRequest = this.authRequest('search').trim();
+    let request = this.authRequest('search').trim();
     let filters = this.checkForFilters(data);
-    searchRequest =  `${searchRequest}&q=${data.keyword}&maxResults=${data.max}${filters}`;
-    return this.http.get(searchRequest);
+    request =  `${request}&q=${data.keyword}&maxResults=${data.max}${filters}`;
+    return this.http.get(request);
   }
 
   checkForFilters(data) {
