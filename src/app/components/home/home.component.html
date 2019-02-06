@@ -7,6 +7,9 @@
       <channel-result 
         *ngIf="item.id.kind === 'youtube#channel'" 
         [channel]="item"></channel-result>
+      <video-result 
+        *ngIf="item.id.kind === 'youtube#playlist'" 
+        [video]="item"></video-result>
     </div>
   </div>
   <button 

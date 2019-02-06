@@ -15,6 +15,9 @@ import { VideoResultComponent } from './shared/video-result/video-result.compone
 import { ChannelResultComponent } from './shared/channel-result/channel-result.component';
 import { ListResultComponent } from './shared/list-result/list-result.component';
 import { SearchFiltersComponent } from './shared/search-filters/search-filters.component';
+import { VideoDetailsComponent } from './components/video-details/video-details.component';
+import { ChannelDetailsComponent } from './components/channel-details/channel-details.component';
+import { PlaylistDetailsComponent } from './components/playlist-details/playlist-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { SearchFiltersComponent } from './shared/search-filters/search-filters.c
     VideoResultComponent,
     ChannelResultComponent,
     ListResultComponent,
-    SearchFiltersComponent
+    SearchFiltersComponent,
+    VideoDetailsComponent,
+    ChannelDetailsComponent,
+    PlaylistDetailsComponent
   ],
   imports: [
     BrowserModule,
