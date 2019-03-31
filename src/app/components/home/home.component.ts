@@ -22,11 +22,9 @@ export class HomeComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     let change = changes.searchKeyword || changes.searchType || changes.uploadTime;
-    if (change) {
-      if (change.currentValue) {
-        this.resetSearch();
-        this.search();
-      }
+    if (change && (change ? change.currentValue : false)) {
+      this.resetSearch();
+      this.search();
     }
   }
 
